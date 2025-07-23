@@ -1,0 +1,172 @@
+main{
+    display: flex;
+
+    /* center */
+    justify-content: center;
+}
+
+body{
+    background-color: #f7f7f7;
+
+    /* header wont have gap */
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #000000;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+}
+
+header h1{
+    padding: 20px;
+}
+
+body nav{
+    background-color: #ececec;
+
+    /* adding border somehows fix the weird gap */
+    border:solid 5px gray; 
+}
+
+.page {
+    width: 80vw;
+    max-width: 50%;
+    padding: 30px;
+}
+
+.page section {
+    background: #e8e8e8;
+    min-height: 20%;
+    padding: 30px;
+    margin-bottom: 50px; /* Add this line */
+
+    box-shadow: 0px 8px 16px 0px rgb(122, 122, 122);
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav{
+    text-align: center;
+}
+
+nav button {
+    background: none;
+    border: none;
+    padding: 10px;
+
+    /* make it show clickable cursor */
+    cursor: pointer;
+}
+
+nav button:hover {
+   background-color: #6f6f6f;
+}
+
+/*CSS for responsive menu*/
+#hamIcon {
+    display: none;
+}
+
+/*to unhide menu items*/
+.menuShow {
+    display: block;
+}
+
+.two-column{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* drop menu */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgb(122, 122, 122);
+  z-index: 1;
+
+  /* transition */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+
+  /* make it appear */
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+/* css sprite */
+
+.sprite {
+    display: inline-block;
+    background: url('images/cssSpriteSheet.png') no-repeat;
+    width: 32px;
+    height: 32px;
+
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Thumbs up position */
+.thumbs-up {
+    background-position: 0 0;
+}
+
+/* Thumbs down position */
+.thumbs-down {
+    background-position: -32px 0;
+}
+
+@media (max-width:800px) {
+
+    /*make a menu items vertical*/
+    nav ul li {
+        display: block;
+    }
+
+    /* unhide menu icon */
+    #hamIcon {
+        display: block;
+    }
+
+    /*hide the menu item list*/
+    nav ul {
+        display: none;
+    }
+}
