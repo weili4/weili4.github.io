@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Food</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Singapore Food</h1>
+    </header>
+    <nav> <!--menu system-->
+        <button id="hamIcon">Open Menu</button>
+        <ul>
+            <li class="dropdown">
+                <span class="sprite thumbs-up"></span>
+                <button id="page1btn">Popular Dishes</button>
+                <div class="dropdown-content">
+                    <a href="#chicken">Chicken Rice</a>
+                    <a href="#laksa">Laksa</a>
+                    <a href="#crab">Chilli Crab</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <button id="page2btn">Snacks</button>
+                <div class="dropdown-content">
+                    <a href="#kaya">Kaya Toast</a>
+                    <a href="#roti">Roti Prata</a>
+                    <a href="#kachang">Ice Kachang</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <button id="page3btn">Cultural Influences</button>
+                <div class="dropdown-content">
+                    <a href="#malay">Malay Influence</a>
+                    <a href="#chinese">Chinese Influence</a>
+                    <a href="#indian">Indian Influence</a>
+                </div>
+            </li>
+
+            <li>
+                <button id="page4btn">Game</button>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="pagecontainer">
+        <div class="page" id="page1">
+            <section>
+                <div class="two-column">
+                    <div id="chicken">
+                        <h2>Hainanese Chicken Rice</h2>
+                        <p>
+                            Tender poached chicken served with fragrant rice cooked in chicken broth, accompanied
+                            by chilli sauce and dark soy sauce.
+                            Fun Fact: Considered Singapore’s "national dish" and has a Michelin-starred version at
+                            Hawker Chan.
+                        </p>
+
+                        <p>Origin: Adapted from Hainan, China, but perfected in Singapore.</p>
+                        <p>Fun Fact: Considered Singapore’s "national dish" and has a Michelin-starred version at Hawker
+                            Chan.
+                        </p>
+
+                        <ul>
+                            <h3>Key Ingredients</h3>
+                            <li>Chicken (poached or roasted)</li>
+                            <li>Rice (cooked with garlic, ginger, and pandan leaves)</li>
+                            <li>Chilli sauce (blend of chilli, garlic, ginger, lime)</li>
+                        </ul>
+
+                    </div>
+
+                    <img src="images/chicken_rice.png" alt="Image of Chicken Rice top down" title="Chicken Rice">
+                </div>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <img src="images/laksa.png" alt="Image of Laksa" title="Laksa">
+                    <div id="laksa">
+                        <h2>Laksa</h2>
+                        <p>Spicy coconut-based noodle soup with prawns, fish cakes, and cockles.</p>
+                        <p>Types: Katong Laksa (Singaporean): Thick rice noodles cut short, eaten with a spoon, Nyonya
+                            Laksa:
+                            Peranakan version with a stronger herbal taste</p>
+                        <p>Fun Fact: Named one of the world’s best soups by CNN Travel.</p>
+                        <ul>
+                            <h3>Key Ingredients</h3>
+                            <li>Coconut milk</li>
+                            <li>Dried shrimp, lemongrass, turmeric</li>
+                            <li>Laksa leaves (daun kesum)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <div id="crab">
+                        <h2>Chilli Crab</h2>
+                        <p>Mud crab stir-fried in a sweet, spicy, and tangy tomato-chilli sauce.</p>
+                        <p>Origin: Created in Singapore in the 1950s by a chef experimenting with tomato sauce and
+                            chilli.</p>
+                        <p>Fun Fact: Ranked #35 on the World’s 50 Best Foods list.</p>
+                        <p>How It’s Eaten: With mantou (fried buns) to soak up the sauce.</p>
+                    </div>
+                    <img src="images/chilli_crab.png" alt="Image of Chilli Crab" title="Chilli Crab">
+                </div>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <div>
+                        <h2>Quiz</h2>
+                        <!-- Question 1: Radio buttons -->
+                        <div class="quiz-question">
+                            <h3>1. Which dish is considered Singapore's "national dish"?</h3>
+                            <input type="radio" name="q1" value="Laksa"> Laksa<br>
+                            <input type="radio" name="q1" value="Chicken Rice"> Hainanese Chicken Rice<br>
+                            <input type="radio" name="q1" value="Chilli Crab"> Chilli Crab<br>
+                        </div>
+
+                        <!-- Question 2: Checkboxes -->
+                        <div class="quiz-question">
+                            <h3>2. Which ingredients are used in Chicken Rice? (Select all that apply)</h3>
+                            <input type="checkbox" name="q2" value="Chicken"> Chicken<br>
+                            <input type="checkbox" name="q2" value="Garlic"> Garlic<br>
+                            <input type="checkbox" name="q2" value="Pandan leaves"> Pandan leaves<br>
+                            <input type="checkbox" name="q2" value="Beef"> Beef<br>
+                        </div>
+
+                        <!-- Question 3: Text input -->
+                        <div class="quiz-question">
+                            <h3>3. What country did Chicken Rice originate from?</h3>
+                            <input type="text" id="q3" placeholder="Enter country name">
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Question 4: Dropdown -->
+                        <div class="quiz-question">
+                            <h3>4. What type of noodles are used in Katong Laksa?</h3>
+                            <select id="q4">
+                                <option value="">Select an option</option>
+                                <option value="Thin rice noodles">Thin rice noodles</option>
+                                <option value="Thick rice noodles">Thick rice noodles</option>
+                                <option value="Egg noodles">Egg noodles</option>
+                            </select>
+                        </div>
+
+                        <!-- Question 5: Number input -->
+                        <div class="quiz-question">
+                            <h3>5. What rank is Chilli Crab on the World's 50 Best Foods list?</h3>
+                            <input type="number" id="q5" placeholder="Enter number">
+                        </div>
+
+                        <!-- Question 6: Radio buttons -->
+                        <div class="quiz-question">
+                            <h3>6. What is eaten with Chilli Crab to soak up the sauce?</h3>
+                            <input type="radio" name="q6" value="Rice"> Rice<br>
+                            <input type="radio" name="q6" value="Mantou"> Mantou (fried buns)<br>
+                            <input type="radio" name="q6" value="Bread"> Bread<br>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button id="btnSubmit">Submit Quiz</button>
+
+                        <!-- Results display -->
+                        <div id="resultsBox" style="display: none;">
+                            <h3>Quiz Results:</h3>
+                            <p id="scoreDisplay"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="page" id="page2">
+            <section>
+                <div class="two-column">
+                    <div id="kaya">
+                        <h2>Kaya Toast with Soft-Boiled Eggs</h2>
+                        <p>Crispy toast with kaya (coconut-jam) and butter, served with soft-boiled eggs and dark soy
+                            sauce.</p>
+                        <p>Origin: A breakfast staple from Hainanese immigrants.</p>
+                        <p>Fun Fact: Often paired with kopi (local coffee) at chains like Ya Kun Kaya Toast.</p>
+                        <ul>
+                            <h3>Key Ingredients</h3>
+                            <li>Kaya (made from coconut milk, eggs, pandan, sugar)</li>
+                            <li>Toast (traditionally charcoal-grilled)</li>
+                            <li>Chilli sauce (blend of chilli, garlic, ginger, lime)</li>
+                        </ul>
+                    </div>
+                    <img src="images/kayatoast.png" alt="Image of Kaya Toast" title="Kaya Toast">
+                </div>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <img src="images/roti_prata.png" alt="Image of Roti Prata top down" title="Roti Prata">
+
+                    <div id="roti">
+                        <h2>Roti Prata</h2>
+                        <p>Flaky, crispy flatbread served with curry or sugar.</p>
+                        <p>Origin: Indian Muslim influence; derived from South Indian paratha.</p>
+                        <p>Fun Fact: Eaten for breakfast, supper, or even as a late-night snack.</p>
+                        <ul>
+                            <h3>Variations</h3>
+                            <li>Plain Prata – Classic version.</li>
+                            <li>Egg Prata – With an egg cooked inside.</li>
+                            <li>Cheese Prata – Modern twist with melted cheese.</li>
+                    </div>
+                </div>
+                </ul>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <div id="kachang">
+                        <h2>Ice Kachang</h2>
+                        <p>Shaved ice dessert with red beans, sweet corn, grass jelly, and coloured syrups, topped with
+                            condensed milk.</p>
+                        <ul>
+                            <h3>Key Ingredients</h3>
+                            <li>Shaved Ice</li>
+                            <li>Attap chee (palm seeds)</li>
+                            <li>Red Beans</li>
+                            <li>Syrup</li>
+                        </ul>
+                    </div>
+                    <img src="images/ice_kachang.png" alt="Image of Ice Kachang" title="Ice Kachang">
+                </div>
+            </section>
+        </div>
+
+        <div class="page" id="page3">
+            <section>
+                <div class="two-column">
+                    <div id="malay">
+                        <h2>Malay Influence</h2>
+                        <p>Fun Fact: Traditionally served with ketupat (rice cakes).</p>
+                        <ul>
+                            <li>Satay: Skewered grilled meat (chicken, beef, or mutton) with peanut sauce.</li>
+                            <li>Nasi Lemak: Coconut rice with fried anchovies, peanuts, egg, and sambal.</li>
+                            <li>Singapore Twist: Often includes fried chicken or otah (spicy fish paste).</li>
+                        </ul>
+                    </div>
+                    <img src="images/satay.png" alt="Image of Satay" title="Satay">
+                </div>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <div id="chinese">
+                        <h2>Chinese Influence</h2>
+                        <p>Fun Fact: Hawkers use high heat for the "wok hei" (smoky flavour).</p>
+                        <ul>
+                            <li>Bak Kut Teh: Pork rib soup simmered with herbs like garlic and star anise.</li>
+                            <li>Teochew vs. Hokkien Style: Clear broth (Teochew) vs. dark, herbal broth (Hokkien).</li>
+                            <li>Char Kway Teow: Stir-fried flat rice noodles with eggs, cockles, and Chinese sausage.
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="images/char_kway_teow.png" alt="Image of Char Kway Teow" title="Char Kway Teow">
+                </div>
+            </section>
+
+            <section>
+                <div class="two-column">
+                    <div id="indian">
+                        <h2>Indian Influence</h2>
+                        <p>Origin: Created by Indian chefs for Chinese customers who enjoyed fish head dishes.</p>
+                        <ul>
+                            <li>Fish Head Curry: Spicy curry with a whole fish head, vegetables, and tamarind.</li>
+                            <li>Murtabak: Stuffed pancake with minced meat, eggs, and onions.</li>
+                        </ul>
+                    </div>
+                    <img src="images/fish_head_curry.png" alt="Image of Fish Head Curry" title="Fish Head Curry">
+                </div>
+            </section>
+        </div>
+
+        <!-- Game -->
+        <div class="page" id="page4">
+            <section>
+                <h2>Kaya Toast Ingredient Game</h2>
+                <p>Click the correct ingredients for Kaya Toast! Avoid the wrong ones!</p>
+
+                <div id="game-container">
+
+                    <div id="game-result">
+                        <h3 id="result-text"></h3>
+                        <button id="play-again">Play Again</button>
+                    </div>
+                    
+                    <div id="game-info">
+                        <span>Score: <span id="score">0</span></span>
+                        <span>Time: <span id="timer">30</span>s</span>
+                        <button id="start-game">Start Game</button>
+                        <button id="reset-game">Reset Game</button>
+                    </div>
+
+                    <div id="game-area">
+                        <div id="game-message">Click Start Game to begin!</div>
+                    </div>
+                </div>
+            </section>
+    </main>
+</body>
+
+</html>
