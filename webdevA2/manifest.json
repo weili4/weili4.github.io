@@ -1,0 +1,14 @@
+{
+    "name": "254718F_WebDev_PWA",
+    "short_name": "254718F_PWA",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#f7f7f7",
+    "icons": [
+        {
+            "src": "images/icon.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ]
+}

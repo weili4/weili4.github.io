@@ -1,0 +1,429 @@
+/* BASE STYLES */
+
+body {
+    font-family: 'MDGroteskRegular', sans-serif;
+    background-color: #f7f7f7;
+
+    /* header wont have gap */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+img {
+    /* responsive image */
+    width: 10%;
+}
+
+/* FONT */
+
+@font-face {
+    font-family: 'MDGroteskRegular';
+    src: url('fonts/MDGroteskRegular.woff') format('woff');
+}
+
+/* LAYOUT */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 1000px;
+    padding: 30px;
+}
+
+.two-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.two-column>* {
+    /* Both left and right section take equal space */
+    flex: 1;
+}
+
+/* HEADER */
+
+header {
+    background-color: #940000;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+
+    transition: background-color 0.75s ease;
+}
+
+header.orange {
+    background-color: #b67600;
+}
+
+header.blue {
+    background-color: #00007e;
+}
+
+header.purple {
+    background-color: #800080;
+}
+
+header.red {
+    background-color: #940000;
+}
+
+header h1 {
+    padding: 20px;
+}
+
+/* NAVIGATION */
+
+nav {
+    background-color: #ececec;
+    text-align: center;
+
+    /* adding border somehows fix the weird gap */
+    border: solid 1px gray;
+
+    /* Box shadow = offset-x, offset-y, blur-radius, spread radius, color */
+    box-shadow: 0px 3px 20px #7a7a7a;
+}
+
+nav ul li {
+    /* drop menu */
+    position: relative;
+    display: inline-block;
+}
+
+nav button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px;
+
+    /* make it show clickable cursor */
+    cursor: pointer;
+
+    /* To make the icon and text side by side */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav button:hover {
+    background-color: #cfcfcf;
+}
+
+/* HAMBURGER MENU */
+
+#hamIcon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 30px;
+    cursor: pointer;
+    background-color: green;
+    height: 100%;
+    display: none;
+}
+
+#hamIcon:hover {
+    background-color: #006800;
+}
+
+nav ul #hamIcon {
+    display: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.menuShow {
+    /*to unhide menu items*/
+    display: block;
+}
+
+/* DROPDOWN MENU */
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 150px;
+    box-shadow: 0px 3px 20px #7a7a7a;
+    z-index: 1;
+
+    /* since height is 0, the text will overflow */
+    overflow: hidden;
+
+    /* transition */
+    height: 0;
+    transition: height 0.3s ease;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+nav ul li:hover .dropdown-content {
+    /* Show the dropdown menu on hover */
+    height: 125px;
+    display: block;
+}
+
+/* MAIN CONTENT AND SECTIONS */
+
+.page section {
+    background: #e8e8e8;
+    padding: 30px;
+
+    /* Add a gap at the bottom of the section */
+    margin-bottom: 50px;
+
+    box-shadow: 0px 10px 20px #7a7a7a;
+}
+
+/* QUIZ */
+
+#resultsBox {
+    display: none;
+    text-align: center;
+}
+
+/* SPRITES */
+
+#popularDishesIcon,
+#snacksIcon,
+#cultureIcon,
+#gameIcon {
+    width: 25px;
+    height: 25px;
+    background-image: url('images/sprite_sheet.png');
+}
+
+#popularDishesIcon {
+    background-position: 0px 0px;
+}
+
+#snacksIcon {
+    background-position: 0px -25px;
+}
+
+#cultureIcon {
+    background-position: -25px -25px;
+}
+
+#gameIcon {
+    background-position: -25px 0px;
+}
+
+/* GAME */
+
+#game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+#game-area {
+    position: relative;
+
+    border: 2px solid #333;
+    background-color: white;
+
+    height: 500px;
+}
+
+#game-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+@keyframes ingredientAnimation {
+    0% {
+        rotate: 0deg;
+    }
+
+    20% {
+        rotate: 72deg;
+    }
+
+    40% {
+        rotate: 144deg;
+    }
+
+    60% {
+        rotate: 216deg;
+    }
+
+    80% {
+        rotate: 288deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+.ingredient {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+
+    cursor: pointer;
+
+    /* linear = constant speed */
+    /* infinite = keeps looping */
+    animation: ingredientAnimation 2s linear infinite;
+
+    transition: all 0.2s ease;
+}
+
+.ingredient:hover {
+    width: 110px;
+    height: 110px;
+}
+
+#game-result {
+    display: none;
+    text-align: center;
+}
+
+#reset-game {
+    display: none;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: black;
+    text-align: center;
+
+    background: #000;
+    color: white;
+    padding-top: 10px;
+
+    border: 2px solid #575757;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer p {
+    color: white;
+}
+
+#qrCode {
+    display: block;
+    width: 200px;
+}
+
+/* TABLET */
+
+@media (max-width:800px) {
+
+    /* Header */
+
+    header {
+        justify-content: left;
+    }
+
+    /* Navigation mobile (hamburger) */
+
+    #hamIcon {
+        display: block;
+    }
+
+    nav ul {
+        height: 0px;
+
+        /* since height is 0, the text will overflow, 
+        overflow: hidden will prevent that */
+        overflow: hidden;
+        
+        /* hide buttons */
+        margin: 0;
+        padding: 0;
+        transition: height 0.3s ease-in-out;
+    }
+
+    nav ul.menuShow {
+        /* Hamburger Menu Transition */
+        height: 260px;
+    }
+
+    nav ul li {
+        display: flex;
+    }
+
+    nav ul li:hover .dropdown-content {
+        /* Dont show the dropdown menu on hover */
+        display: none;
+    }
+
+    nav button {
+        font-size: 1.3em;
+        padding: 15px 20px;
+    }
+
+    /* Layout for tablet */
+
+    .page {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .two-column {
+        flex-direction: column;
+    }
+
+    .two-column img {
+        width: 50%;
+    }
+
+    /* Text size for tablet */
+    h2 {
+        font-size: 2.0em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    p,
+    ul,
+    label,
+    option,
+    select,
+    input,
+    span,
+    button {
+        font-size: 1.4em;
+    }
+
+    /* GAME */
+    #game-container {
+        max-width: 100%;
+    }
+
+    /* FOOTER */
+    #qrCode {
+        display: none;
+        border: 5px solid orange;
+    }
+
+}
